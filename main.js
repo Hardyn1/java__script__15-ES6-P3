@@ -113,9 +113,9 @@ const englishInput = document.getElementById('input-eng'),
     table = document.getElementById('table');
 
 
-let words;
+
 // Если меньше 1 тогда ? words = [], если нет : words 
-localStorage.length < 1 ? words = [] : words = JSON.parse(localStorage.getItem('words'));
+let words = localStorage.getItem('words') ? JSON.parse(localStorage.getItem('words')) : [];
 
 let addWordToTable = index => {
     table.innerHTML += `
