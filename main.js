@@ -14,17 +14,16 @@
     *
     НАСЛЕДОВАНИЕ КЛАССОВ:
 */
-
 // class - изготовитель обьектов.
 class Employee{
-    // Это переменные нужные для написания логики внутри класса.
-    salary = 2000;
-    position = 'designer';
-    // Функция конструктор
-    constructor(name, age){
+   
+    constructor(name, age, salary, position){
         this.name = name; // = name который попадет из вне, тоесть Marina.
         this.age = age;
+        this.salary = salary;
+        this.position = position;
     };
+
     // МЕТОД КЛАССА.
     printInfo(){
         console.log('Name of Employee: ' + this.name);
@@ -32,10 +31,16 @@ class Employee{
     printAge(){
          console.log('Age of Employee: ' + this.age);
     };
+    printSalary(){
+        console.log('Salary of Employee: ' + this.salary);
+    }
+     printPosition(){
+        console.log('Position of Employee: ' + this.position);
+    }
 }
 
 // Экземпляр конструктора обьекта (Создали новый обьект).
-const marina = new Employee('Marina', 28);
+const marina = new Employee('Marina', 28, 2000, 'Developer');
 // Посмотрим тип данных.
 console.log(typeof Employee); // function.
 
@@ -43,8 +48,8 @@ marina.printInfo(); // Name of Employee: Marina.
 marina.printAge(); // Age of Employee: 28
 
 console.log(marina);
+console.log(marina.position); // 'Developer'
 // Добавленны новые property.
-console.log(marina.salary); // 2000.
 
 /*
     НАСЛЕДОВАНИЕ КЛАССОВ:
